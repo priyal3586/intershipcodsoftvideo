@@ -1,0 +1,51 @@
+import java.util.Scanner;
+
+class Numbergame
+{
+      public  static int  getrandN(int min,int max)
+	       {
+		             return (int)(Math.random()*(max-min+1)+min);
+		}
+		
+	public static void main(String[] args) {
+	    int chances=5;
+	    int finals=0;
+	    boolean playagain=true;
+	    Scanner sc=new Scanner(System.in);
+	   String x=sc.next();
+		System.out.println("            ******welcome "+x+" to the Number game******  ");
+		System.out.println("                       Lets Start the Game");
+		System.out.println("           you have atleast "+chances+" chances to play the game\n\n");
+		while(playagain){
+		   int rand =getrandN(1,100);
+		   boolean guess =false;
+		   for(int i=0;i<chances;i++){
+		       System.out.println("Chance "+(i+1)+"\nEnter Your Guess: ");
+		       int y=sc.nextInt();
+		       if(rand==y){
+		           guess =true;
+		           finals++;
+		           System.out.println("you have won the game");
+		           break;
+		       }
+		       else if(rand>y){
+		           System.out.println("It is too *** LOW ***");
+	
+		       }
+		       else{
+		           System.out.println("It is too *** HIGH ***");
+		       }
+		   }
+		   if(guess==false){
+		        System.out.println("sorry "+x+" you have lost the game.\nThe right number is"+rand+"\nHope you enjoyed the game");
+		   }
+		    System.out.println("Do you want to play again \n             ***PRESS(Y/N)*****");
+		    String pa=sc.next();
+		    playagain=pa.equalsIgnoreCase("y");
+		    
+		}
+		System.out.println("Hope "+x+" enjoyed your game");
+				System.out.println("Here is your score: "+finals);
+	     
+	}
+}
