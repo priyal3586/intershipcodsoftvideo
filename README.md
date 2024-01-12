@@ -1,0 +1,1 @@
+It is programme of java language in which we create a Number Game. In this Number Game we will guess a random number and the game will decide the number we guess is right or wrong. And if the number is we will win the game and if it is wrong we can decide to play again or can exit the game
